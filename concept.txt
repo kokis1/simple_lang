@@ -3,16 +3,59 @@ THIS IS THE CONCEPT FOR THE LANGUAGE
 basically, this is a project to create a very small (low number of keywords, small library etc, simple types) multi-paradigm efficient language.
 the goal is for it to be simple but also efficient.
 
-inspiration:
-python
-C
+The first version of the interpreter will have three classes, one for the lexer, one for the parser and a parent interpreter class that will handle the input and such.
 
 
-I want to be able to use object-oriented programming.
-I want static typing.
+this language will use reverse polish notation, eg:
+
+int x 7;
+int y 5 2 -;
+x: y x +;
+
+x print:
 
 
-simple types:
-int
-float
-char
+-> 10
+
+more complicated:
+
+def multiply int(int x, int y){
+    int counter 0;
+    int result 0;
+    while(counter y <=;){
+        result: x result +;
+        counter: 1 counter +;
+    }
+    return result
+}
+
+def main void(){
+    int x 4;
+    int y 6;
+    int prod: x y multiply;
+    prod print;
+}
+
+main;
+
+-> 24
+
+my thinking is that the native language will not actually have definitions for things like plus and minus, but instead use itself
+implement them in the standard library. I'm thinking of only using bit manipulation as the default operations, eg:
+
+5, <;
+
+increment 11_bin by 1 (resulting in 100_bin)
+
+then the standard library can use these to implement all the binary operators and the result
+so, standard keywords:
+
+while: while loop (I only need this type of loop)
+if: if followed by a conditional
+elif: what to do after the if statement
+else: after all the other clauses
+
+
+My idea for things like passing variables into a function will involve adding the values to the stack and unloading them into
+the function when the function keyword is called.
+for now though, I shall focus on implementing simple variable allocation, control flow and looops
