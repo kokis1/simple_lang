@@ -1,0 +1,18 @@
+THIS IS THE CONCEPT FOR THE LANGUAGE
+
+basically, this is a project to create a very small (low number of keywords, small library etc, simple types) multi-paradigm efficient language.
+the goal is for it to be simple but also efficient.
+
+inspiration:
+python
+C
+
+
+I want to be able to use object-oriented programming.
+I want static typing.
+
+
+simple types:
+int
+float
+char
