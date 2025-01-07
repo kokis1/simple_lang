@@ -1,7 +1,24 @@
-int x 4;
-while x 5;
-hello world;
-return;
-else;
-if;
-> > <;
+// a simple program showing how the syntax and functions work in my language.
+
+class main{
+    def times int (int x, int y){
+        int counter;
+        int result x;
+        while (counter y <){
+            result: result x +;
+        }
+        return x;
+    }
+
+
+
+    def Main void(){
+        int x 34;
+        int y 17;
+        x: x y times;
+        x print;
+    }
+}
+
+main program;
+main.Main;
