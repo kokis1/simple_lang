@@ -18,5 +18,5 @@ L_BRKT,(
 R_BRKT,)
 LESS,<
 MORE,>
-EQUAL,=
+EQUALS,=
 COLON,:
