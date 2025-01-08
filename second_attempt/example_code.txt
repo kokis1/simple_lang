@@ -1,0 +1,7 @@
+Hello 1234
+"Reuben Stannah"
+int x 0;
+while ( x 56 <){
+x print;
+x: x 1 +;
+}

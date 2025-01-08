@@ -1,0 +1,23 @@
+grammar:
+
+
+program: (statement)* ;
+statement: declaration | assignment | while | if | else | elif | inbuilt
+declaration: int_declaration | bool_declaration | string_declaration
+int_declaration: INT IDENTIFIER (int_expression)? ;
+bool_declaration: BOOL IDENTIFIER (bool_declaration)? ;
+string_declaration: STRING IDENTIFIER (string_expression)? ;
+assignment: IDENTIFIER COLON bool_expression | int_expression | string_expression ;
+while: WHILE ( bool_expression ) { (statement)* }
+if: IF ( bool_expression ) { (statement)* }
+elif: ELIF ( bool_expression ) { (statement)* }
+else: {(statement)*}
+expression: bool_expression | string_expression | int_expression
+bool_expression: ((Bool | bool_expression) (Bool | bool_expression) bool_operator) | Bool
+bool_operator: and | or | not
+string_expression: ((String | string_expression) (String | string_expression) string_operator) | String
+string_operator: +
+int_expression: ((Integer | int_expression) (Integer | int_expression) int_operator) | Integer
+int_operator: + | - | < | > | * | / | =
+inbuilt: print
+print: string_expression PRINT ;
