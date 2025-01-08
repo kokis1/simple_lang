@@ -38,7 +38,7 @@ FEATURES:
             - *: multiplies two integers
             - /: divides two integers
             - <: returns true if a number is less than another
-            - >: returns true if a number is less than another
+            - >: returns true if a number is greater than another
             - =: retuns true if two numbers are equal to eachother
         - unary operators:
             - -: this turns a positive integer negative and vice-versa
