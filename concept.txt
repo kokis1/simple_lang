@@ -1,9 +1,10 @@
 grammar:
 
 
-program: (statement)* ;
-statement: declaration | assignment | while | if | else | elif | inbuilt
-declaration: int_declaration | bool_declaration | string_declaration
+program: (statement)*
+statement: declaration | assignment | while | if | else | elif | inbuilt | function
+declaration: int_declaration | bool_declaration | string_declaration | function_declaration
+function_declaration: FN (BOOL | INT | STRING) IDENTIFIER ( ((INT | BOOL | STRING) IDENTIFIER)* ) { program }
 int_declaration: INT IDENTIFIER (int_expression)? ;
 bool_declaration: BOOL IDENTIFIER (bool_declaration)? ;
 string_declaration: STRING IDENTIFIER (string_expression)? ;
