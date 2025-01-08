@@ -23,7 +23,7 @@ FEATURES:
     - true
     - false
     - any integer
-    - any word (for identifiers)
+    - any word (for identifiers and string literals)
 - there are operators for each type of literal:
     - strings:
         - +: this concatenates two strings together
