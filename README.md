@@ -38,7 +38,7 @@ FEATURES:
             - *: multiplies two integers
             - /: divides two integers
             - <: returns true if a number is less than another
-            - >: returns true if a number is greater than another
+            - ">": returns true if a number is greater than another
             - =: retuns true if two numbers are equal to eachother
         - unary operators:
             - -: this turns a positive integer negative and vice-versa
@@ -49,3 +49,5 @@ FEATURES:
 - there are some simple changes though:
     - arguments passed into functions will follow reverse-Polish notation style, e.g.: instead of add_two_numbers(a, b); we will use a b addd_two_numbers;
     - reassigning a variable will not use the = sign, it will instead use a colon, e.g.: instead of x = x * 4; we will use x: x 4 *;
+- at the moment the standard library will be able to print to the console, however the idea is to be able to expand this in the future to make this into a more useful language
+
