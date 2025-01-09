@@ -9,12 +9,17 @@ class main():
         # starts the text as anything other than "quit"
         text = 0
         
-        while text != "quit":            
+        while True:            
             # sets the text as the prompt
             text = input("> ")
             
+            if text == "quit":
+                break
+            
             # resets the position of the scanner
             self.scan.position = 0
+            
+            self.scan.line += 1
             
             # scans the input text and adds the new tokens to the array
             self.scan.main(text)
@@ -23,6 +28,10 @@ class main():
             # prints out the token array
             for i in range(len(self.scan.token_array)):
                 print(self.scan.token_array[i])
+        self.scan.token_array.append(scanner.tok("EOF", 0, self.scan.line))
+        # prints out the token array
+        for i in range(len(self.scan.token_array)):
+            print(self.scan.token_array[i])
     
     def get_file_as_array_of_lines(self, filepath):
         '''opens the file and reads the lines of it'''
@@ -63,7 +72,7 @@ class main():
         # prints out the token array
         for i in range(len(self.scan.token_array)):
             print(self.scan.token_array[i])
-        print("there are ", self.scan.line + 1, "lines in this file")
+        print("there are ", self.scan.line, "lines in this file")
     
     def main(self):
         # initialises a new scanner object
