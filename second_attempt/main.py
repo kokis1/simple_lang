@@ -3,6 +3,17 @@ from sys import argv
 
 
 class main():
+    
+    
+    def print_as_lines(self):
+        for line_index in range(1, self.scan.line + 1):
+            result = ""
+            for token in self.scan.token_array:
+                if token.line == line_index:
+                    result += token.__str__()
+                    result += " "
+            print("line ", line_index, ": ", result)
+    
     def scan_from_command_line(self):
         '''allows the language to be used from the command line'''
         
@@ -14,8 +25,7 @@ class main():
             text = input("> ")
             
             if text == "quit":
-                break
-            
+                break            
             # resets the position of the scanner
             self.scan.position = 0
             
@@ -26,12 +36,10 @@ class main():
             
             
             # prints out the token array
-            for i in range(len(self.scan.token_array)):
-                print(self.scan.token_array[i])
+            self.print_as_lines()
         self.scan.token_array.append(scanner.tok("EOF", 0, self.scan.line))
         # prints out the token array
-        for i in range(len(self.scan.token_array)):
-            print(self.scan.token_array[i])
+        self.print_as_lines()
     
     def get_file_as_array_of_lines(self, filepath):
         '''opens the file and reads the lines of it'''
@@ -70,8 +78,7 @@ class main():
             self.scan.main(line)
             
         # prints out the token array
-        for i in range(len(self.scan.token_array)):
-            print(self.scan.token_array[i])
+        self.print_as_lines()
         print("there are ", self.scan.line, "lines in this file")
     
     def main(self):

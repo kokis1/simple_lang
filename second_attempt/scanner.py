@@ -41,7 +41,7 @@ class tok():
         self.value = value
         self.line = line
     def __str__(self):
-        return "TOKEN({type}, {value}) in line {line}".format(type=self.type, value=self.value, line=self.line)
+        return "TOKEN({type}, {value})".format(type=self.type, value=self.value)
     
     def __repr__(self):
         return self.__str__()
@@ -86,7 +86,6 @@ class scanner:
     def get_string_literal(self):
         result = ""
         self.advance()
-        print("getting string")
         while self.current_char != '"':
             result += self.current_char
             self.advance()
@@ -122,12 +121,15 @@ class scanner:
                             "fn", "and", "or","not"):
                     token = tok(word.upper(), 0, self.line)
                     self.token_array.append(token)
+                    continue
                 elif word in ("true", "false"):
                     token = tok(BOOL_LITERAL, word.upper(), self.line)
                     self.token_array.append(token)
+                    continue
                 else:
                     token = tok(IDENTIFIER, word, self.line)
                     self.token_array.append(token)
+                    continue
             elif self.current_char == ":":
                 self.token_array.append(tok(COLON, 0, self.line))
                 
