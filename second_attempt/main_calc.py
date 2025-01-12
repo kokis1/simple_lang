@@ -15,33 +15,6 @@ class main():
                     result += " "
             print("line ", line_index, ": ", result)
     
-    def scan_from_command_line(self):
-        '''allows the language to be used from the command line'''
-        
-        # starts the text as anything other than "quit"
-        text = 0
-        
-        while True:            
-            # sets the text as the prompt
-            text = input("> ")
-            
-            if text == "quit":
-                break            
-            # resets the position of the scanner
-            self.scan.position = 0
-            
-            self.scan.line += 1
-            
-            # scans the input text and adds the new tokens to the array
-            self.scan.main(text)
-            
-            
-            # prints out the token array
-            self.print_as_lines()
-        self.scan.token_array.append(tok("EOF", 0, self.scan.line))
-        # prints out the token array
-        self.print_as_lines()
-    
     def get_file_as_array_of_lines(self, filepath):
         '''opens the file and reads the lines of it'''
         
@@ -88,10 +61,12 @@ class main():
         
         
         if len(argv) == 1:
-            self.scan_from_command_line()
+            print("no file given")
+            exit()
         elif len(argv) == 2:
             self.scan_from_file(str(argv[1]))
-
+        self.calc_parser = cal_parser(self.scan.token_array)
+        self.calc_parser.main()
 
 program = main()
 program.main()

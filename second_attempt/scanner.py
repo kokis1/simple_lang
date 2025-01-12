@@ -99,11 +99,14 @@ class scanner:
             elif self.current_char == ":":
                 self.token_array.append(tok(COLON, 0, self.line))
                 
-            elif self.token_array == ";":
+            elif self.current_char == ";":
                 self.token_array.append(tok(S_COLON, 0, self.line))
                 
             elif self.current_char == "+":
                 self.token_array.append(tok(PLUS, 0, self.line))
+            
+            elif self.current_char == "*":
+                self.token_array.append(tok(TIMES, 0, self.line))
                 
             elif self.current_char == "-":
                 if self.peek_next_char().isdigit():

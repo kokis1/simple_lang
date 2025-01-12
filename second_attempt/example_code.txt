@@ -1,7 +1,2 @@
-Hello 1234
-"Reuben Stannah"
-int x 0;
-while ( x 56 <){
-x print;
-x: x 1 +;
-}
+1 2 + 6 * ;
+1 2 + 7 *;
