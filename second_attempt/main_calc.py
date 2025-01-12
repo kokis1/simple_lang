@@ -52,8 +52,8 @@ class main():
             self.scan.main(line)
             
         # prints out the token array
-        self.print_as_lines()
-        print("there are ", self.scan.line, "lines in this file")
+        '''self.print_as_lines()
+        print("there are ", self.scan.line, "lines in this file")'''
     
     def main(self):
         # initialises a new scanner object
